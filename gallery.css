@@ -1,0 +1,43 @@
+
+/* Video Gallery */
+.video-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,mimax(250px,1fr));
+    column-count:2; /* Number of columns */
+   gap: 10px;
+   padding: 10px;
+}
+
+.video-item {
+    margin-bottom: 15px; /* Space between rows */
+    display: inline-block;
+    width: 100%;
+    break-inside: avoid; /* Prevents breaking within columns */
+    
+}
+
+video {
+    width: 100%;
+    height: auto; /* Maintain original aspect ratio */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+video:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .video-gallery {
+        column-count: 2; /* Reduce to 2 columns on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .video-gallery {
+        column-count: 1; /* Single column on mobile screens */
+    }
+}

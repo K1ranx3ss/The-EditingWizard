@@ -1,0 +1,219 @@
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+/* Header Section */
+header {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+nav {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+    z-index: 20;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffd700; /* Highlight color on hover */
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Promotional Text */
+.promo-text {
+    position: absolute;
+    top: 40%;  /* Adjust vertical position */
+   right: 10%;
+   left: 60%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-family: Dancing Script;
+    font-size: 24px;
+    font-weight: 500;
+    text-align: center;
+    width: 80%; /* Limits the text width */
+    max-width: 600px; /* Ensures it doesn't stretch too wide */
+    z-index: 10;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Improves visibility */
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+    .promo-text {
+        font-size: 4vw; /* Larger font size for smaller screens */
+        width: 90%; /* Make text width more flexible */
+    }
+}
+
+@media (max-width: 480px) {
+    .promo-text {
+        font-size: 5vw; /* Even larger font for very small screens */
+        width: 95%;
+    }
+}
+/* Contact Us Button */
+.overlay-button {
+    position: absolute;
+    bottom: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.overlay-button:hover {
+    background-color: #ffd700; /* Button color on hover */
+    transform: translateX(-50%) scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: 50px 20px;
+    background-color: #f8f9fa;
+    text-align: center;
+    overflow: hidden; /* Ensure smooth transition without scrollbars */
+}
+
+.testimonials h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Testimonial Slider */
+.testimonial-slider {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease-in-out; /* Smooth slide effect */
+    will-change: transform;
+}
+
+.testimonial {
+   
+    .testimonial-slider {
+        display: flex;
+        transition: transform 0.5s ease-in-out; /* Smooth sliding transition */
+        will-change: transform; /* Optimize animation performance */
+    }
+}
+
+/* Ensure testimonials take full width for sliding */
+.testimonial {
+    flex: 0 0 100%; /* Each testimonial takes 100% width of the slider */
+}
+
+.testimonial:hover {
+    transform: scale(1.05); /* Slight zoom-in on hover */
+}
+
+.testimonial img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add hover effect */
+}
+
+.testimonial img:hover {
+    transform: scale(1.2) rotate(10deg);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.testimonial p {
+    font-size: 16px;
+    color: #555;
+    margin: 0;
+}
+
+.testimonial.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) scale(1); /* Center and make visible */
+
+/* Navigation Controls */
+.controls {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.controls button {
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.controls button:hover {
+    background-color: #555;
+}
+
+.controls .dot {
+    display: inline-block;
+    position: relative;
+    width: 12px;
+    height: 12px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.controls .dot.active {
+    background-color: #333;
+}
